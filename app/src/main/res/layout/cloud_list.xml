@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/cloud_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="8dp"
+        tools:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/cloud_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/cloud_image"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:text="Cloud Name"
+        android:layout_toRightOf="@+id/cloud_image" />
+
+    <TextView
+        android:id="@+id/cloud_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cloud_name"
+        android:layout_toEndOf="@+id/cloud_image"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        tools:text="Description:"
+        android:layout_toRightOf="@+id/cloud_image" />
+
+   <!-- <TextView
+        android:id="@+id/pro_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        tools:text="Quantity: 10"
+        android:paddingTop="8dp"
+        android:layout_below="@+id/pro_supplier"
+        android:layout_toEndOf="@+id/cloud_image"
+        android:layout_toRightOf="@+id/cloud_image" /> -->
+
+    <TextView
+        android:id="@+id/cloud_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:text="Rating:"
+        android:layout_below="@+id/cloud_description"
+        android:layout_alignStart="@+id/cloud_description"
+        android:layout_alignLeft="@+id/cloud_description" />
+
+  <!--  <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sell_item"
+        android:id="@+id/sell_button"
+        android:layout_alignBottom="@+id/cloud_rating"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" /> -->
+</RelativeLayout>
