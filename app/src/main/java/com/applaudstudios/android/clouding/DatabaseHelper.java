@@ -25,7 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             "CREATE TABLE " + DatabaseContract.Cloud.TABLE_NAME + " (" +
                     DatabaseContract.Cloud._ID + " INTEGER PRIMARY KEY," +
                     DatabaseContract.Cloud.COLUMN_NAME_CLOUD_NAME + TEXT_TYPE + COMMA_SEP +
-                    DatabaseContract.Cloud.COLUMN_NAME_CLOUD_RATING + INT_TYPE + COMMA_SEP +
+                    DatabaseContract.Cloud.COLUMN_NAME_CLOUD_RATING + REAL_TYPE + COMMA_SEP +
                     //     DatabaseContract.Cloud.COLUMN_NAME_PRODUCT_QUANTITY + INT_TYPE + COMMA_SEP +
                     DatabaseContract.Cloud.COLUMN_NAME_CLOUD_DESCRIPTION + TEXT_TYPE + COMMA_SEP +
                     DatabaseContract.Cloud.COLUMN_NAME_CLOUD_IMAGEURI + TEXT_TYPE + " )";
@@ -101,7 +101,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             String cloudName = selectAll.getString(selectAll.getColumnIndex("name"));
             float cloudRating = selectAll.getFloat(selectAll.getColumnIndex("rating"));
             //  int productQuantity = selectAll.getInt(selectAll.getColumnIndex("quantity"));
-            String cloudDescription = selectAll.getString(selectAll.getColumnIndex("supplier"));
+            String cloudDescription = selectAll.getString(selectAll.getColumnIndex("description"));
             String cloudImageUri = selectAll.getString(selectAll.getColumnIndex("imageuri"));
 
             clouds.add(new Cloud(cloudId, cloudName, cloudDescription, cloudRating, cloudImageUri));
@@ -138,23 +138,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    /**
-     * public boolean updateQuantity(int id, int quantity) {
-     * SQLiteDatabase db = this.getWritableDatabase();
-     * <p>
-     * ContentValues values = new ContentValues();
-     * values.put(DatabaseContract.Cloud.COLUMN_NAME_PRODUCT_QUANTITY, quantity);
-     * <p>
-     * String selection = DatabaseContract.Cloud._ID + " LIKE ?";
-     * String[] selectionArgs = {String.valueOf(id)};
-     * <p>
-     * db.update(DatabaseContract.Cloud.TABLE_NAME, values, selection, selectionArgs);
-     * <p>
-     * db.close();
-     * <p>
-     * return true;
-     * }
-     **/
+  /**
+      public boolean updateQuantity(int id, int quantity) {
+      SQLiteDatabase db = this.getWritableDatabase();
+      <p>
+      ContentValues values = new ContentValues();
+      values.put(DatabaseContract.Cloud.COLUMN_NAME_PRODUCT_QUANTITY, quantity);
+      <p>
+      String selection = DatabaseContract.Cloud._ID + " LIKE ?";
+      String[] selectionArgs = {String.valueOf(id)};
+      <p>
+      db.update(DatabaseContract.Cloud.TABLE_NAME, values, selection, selectionArgs);
+      <p>
+      db.close();
+      <p>
+      return true;
+      } **/
+
     public void deleteCloud(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
 

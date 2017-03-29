@@ -62,7 +62,7 @@ public class CloudCreation extends AppCompatActivity {
 
         String cloudName = cloudNameView.getText().toString();
         String cloudRating = cloudRatingView.getText().toString();
-        //  String cloudQuantity = cloudQuantityView.getText().toString();
+         // String cloudQuantity = cloudQuantityView.getText().toString();
         String cloudDescription = cloudDescriptionView.getText().toString();
 
         if (cloudName.isEmpty() || cloudDescription.isEmpty() || cloudRating.isEmpty() || !imageAdded) {
@@ -71,10 +71,10 @@ public class CloudCreation extends AppCompatActivity {
             DatabaseHelper dbHelp = new DatabaseHelper(this);
 
             dbHelp.addCloud(
-                     -1,
-                     cloudName,
-                     Float.valueOf(cloudRating),
-                     cloudDescription,
+                    -1,
+                    cloudName,
+                    cloudDescription,
+                    Float.valueOf(cloudRating),
                     mCurrentPhotoPath);
 
             this.finish();
