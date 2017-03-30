@@ -61,7 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //public boolean addCloud(int id, String name, float rating, String description, int imageId) {
-    public boolean addCloud(int id, String cloudName, String name, String description, float rating, String imageUri) {
+    public boolean addCloud(int id, String name, String description, float rating, String imageUri) {
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -71,7 +71,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         values.put(DatabaseContract.Cloud.COLUMN_NAME_CLOUD_NAME, name);
         values.put(DatabaseContract.Cloud.COLUMN_NAME_CLOUD_RATING, rating);
-        //  values.put(DatabaseContract.Cloud.COLUMN_NAME_PRODUCT_QUANTITY, quantity);
         values.put(DatabaseContract.Cloud.COLUMN_NAME_CLOUD_DESCRIPTION, description);
         values.put(DatabaseContract.Cloud.COLUMN_NAME_CLOUD_IMAGEURI, imageUri);
 
@@ -100,7 +99,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int cloudId = selectAll.getInt(selectAll.getColumnIndex("_id"));
             String cloudName = selectAll.getString(selectAll.getColumnIndex("name"));
             float cloudRating = selectAll.getFloat(selectAll.getColumnIndex("rating"));
-            //  int productQuantity = selectAll.getInt(selectAll.getColumnIndex("quantity"));
             String cloudDescription = selectAll.getString(selectAll.getColumnIndex("description"));
             String cloudImageUri = selectAll.getString(selectAll.getColumnIndex("imageuri"));
 
@@ -125,7 +123,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int cloudId = getCloud.getInt(getCloud.getColumnIndex("_id"));
             String cloudName = getCloud.getString(getCloud.getColumnIndex("name"));
             float cloudRating = getCloud.getFloat(getCloud.getColumnIndex("rating"));
-            //   int productQuantity = getProduct.getInt(getProduct.getColumnIndex("quantity"));
             String cloudDescription = getCloud.getString(getCloud.getColumnIndex("description"));
             String cloudImageUri = getCloud.getString(getCloud.getColumnIndex("imageuri"));
 
@@ -137,23 +134,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return singleCloud;
 
     }
-
-  /**
-      public boolean updateQuantity(int id, int quantity) {
-      SQLiteDatabase db = this.getWritableDatabase();
-      <p>
-      ContentValues values = new ContentValues();
-      values.put(DatabaseContract.Cloud.COLUMN_NAME_PRODUCT_QUANTITY, quantity);
-      <p>
-      String selection = DatabaseContract.Cloud._ID + " LIKE ?";
-      String[] selectionArgs = {String.valueOf(id)};
-      <p>
-      db.update(DatabaseContract.Cloud.TABLE_NAME, values, selection, selectionArgs);
-      <p>
-      db.close();
-      <p>
-      return true;
-      } **/
 
     public void deleteCloud(int id) {
         SQLiteDatabase db = this.getWritableDatabase();

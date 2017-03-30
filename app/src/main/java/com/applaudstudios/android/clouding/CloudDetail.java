@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by wjplaud83 on 2/18/17.
@@ -25,9 +24,6 @@ public class CloudDetail extends AppCompatActivity implements BasicDialogFragmen
     String cloudImagePath;
     float cloudRating;
     String cloudDescription;
-    int productQuantity;
-
-    //   TextView detailProductQuantity;
 
     Cloud detailCloud;
 
@@ -40,14 +36,10 @@ public class CloudDetail extends AppCompatActivity implements BasicDialogFragmen
 
         cloudAssignment(queryId);
 
-        //   addItemsField = (EditText) findViewById(R.id.dt_plus_text);
-        //  subtractItemsField = (EditText) findViewById(R.id.dt_sub_text);
-
         ImageView detailCloudImage = (ImageView) findViewById(R.id.dt_cloud_image);
         TextView detailCloudName = (TextView) findViewById(R.id.dt_cloud_name);
         TextView detailCloudRating = (TextView) findViewById(R.id.dt_cloud_rating);
-        //  detailProductQuantity = (TextView) findViewById(R.id.dt_pro_quantity);
-        TextView detailCloudDescription = (TextView) findViewById(R.id.dt_pro_supplier);
+        TextView detailCloudDescription = (TextView) findViewById(R.id.dt_cloud_description);
 
         detailCloudImage.setImageBitmap(ImageTools.imageProcess(cloudImagePath));
         detailCloudName.setText(cloudName);
@@ -82,8 +74,8 @@ public class CloudDetail extends AppCompatActivity implements BasicDialogFragmen
 
     public void showMore(View view) {
         String[] emails = new String[]{getString(R.string.email_address)};
-        String subject = getString(R.string.request_for_a_new) + cloudName
-                + getString(R.string.shipment);
+        String subject = getString(R.string.new_picture) + cloudName;
+           //     + getString(R.string.shipment);
         String text = getString(R.string.hello) + getString(R.string.request_main)
                 + cloudName + getString(R.string.units) + cloudDescription + ".";
 

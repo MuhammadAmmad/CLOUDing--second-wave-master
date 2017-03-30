@@ -8,7 +8,6 @@ public class Cloud {
     private int mId;
     private String mName;
     private float mRating;
-    //   private int mQuantity;
     private String mDescription;
     private String mImageUri;
 
@@ -16,7 +15,6 @@ public class Cloud {
         mId = 0;
         mName = name;
         mRating = rating;
-        //     mQuantity = quantity;
         mDescription = description;
         mImageUri = imageUri;
     }
@@ -25,7 +23,6 @@ public class Cloud {
         mId = id;
         mName = name;
         mRating = rating;
-        //    mQuantity = quantity;
         mDescription = description;
         mImageUri = imageUri;
     }
@@ -53,16 +50,6 @@ public class Cloud {
     public void setRating(float rating) {
         mRating = rating;
     }
-
-    /**
-     * public int getQuantity() {
-     * return mQuantity;
-     * }
-     * <p>
-     * public void setQuantity(int quantity) {
-     * mQuantity = quantity;
-     * }
-     **/
 
     public String getDescription() {
         return mDescription;

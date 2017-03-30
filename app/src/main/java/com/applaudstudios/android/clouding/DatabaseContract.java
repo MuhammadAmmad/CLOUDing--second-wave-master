@@ -18,7 +18,6 @@ public final class DatabaseContract {
         public static final String COLUMN_NAME_NULLABLE = null;
         public static final String COLUMN_NAME_CLOUD_NAME = "name";
         public static final String COLUMN_NAME_CLOUD_RATING= "rating";
-      //  public static final String COLUMN_NAME_PRODUCT_QUANTITY = "quantity";
         public static final String COLUMN_NAME_CLOUD_DESCRIPTION = "description";
         public static final String COLUMN_NAME_CLOUD_IMAGEURI = "imageuri";
     }

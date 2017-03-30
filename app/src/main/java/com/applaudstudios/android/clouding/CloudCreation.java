@@ -28,7 +28,6 @@ public class CloudCreation extends AppCompatActivity {
 
     private EditText cloudNameView;
     private EditText cloudRatingView;
-    //   private EditText cloudQuantityView;
     private EditText cloudDescriptionView;
     private ImageView cloudImage;
     private boolean imageAdded;
@@ -39,12 +38,9 @@ public class CloudCreation extends AppCompatActivity {
         setContentView(R.layout.activity_cloud_creation);
 
         imageAdded = false;
-
         cloudNameView = (EditText) findViewById(R.id.edit_cloud_name);
         cloudRatingView = (EditText) findViewById(R.id.edit_cloud_rating);
-        //   cloudQuantityView = (EditText) findViewById(R.id.edit_pro_quantity);
         cloudDescriptionView = (EditText) findViewById(R.id.edit_cloud_description);
-
         cloudImage = (ImageView) findViewById(R.id.add_image);
     }
 
@@ -62,7 +58,6 @@ public class CloudCreation extends AppCompatActivity {
 
         String cloudName = cloudNameView.getText().toString();
         String cloudRating = cloudRatingView.getText().toString();
-         // String cloudQuantity = cloudQuantityView.getText().toString();
         String cloudDescription = cloudDescriptionView.getText().toString();
 
         if (cloudName.isEmpty() || cloudDescription.isEmpty() || cloudRating.isEmpty() || !imageAdded) {
